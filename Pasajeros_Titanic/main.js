@@ -3,6 +3,7 @@
 
 const pasajerosTitanic = ["Juan", "Ana", "Luis", "María", "Carlos", "Laura", "Miguel", "Sofía", "Pedro", "Isabel", "Alejandro", "Elena"];
 
+
 console.log(pasajerosTitanic.length);
 
 function registrarPasajero() {
@@ -13,7 +14,7 @@ function registrarPasajero() {
 
     }
     else {
-        document.getElementById("alert").innerHTML = '<div class="alert alert-danger" role="alert">Lo siento! Ya no quedan plazas si nadie se da de baja.</div>'
+        document.getElementById("alert").innerHTML = '<div class="alert alert-danger" role="alert">Lo siento! El máximo de plazas es '+pasajerosTitanic.length+'. Ya no quedan plazas si nadie se da de baja.</div>'
 
     }
 }
@@ -27,7 +28,7 @@ function eliminarUltimo(){
 }
 
 function mostrarPasajeros(){
-    document.getElementById("lista-pasajeros").innerHTML = "<h1>Listado Pasajeros</h1>";
+    document.getElementById("lista-pasajeros").innerHTML = "<h1>Listado Pasajeros: "+pasajerosTitanic.length+"</h1>";
     for (let i=0; i<pasajerosTitanic.length;i++){
     document.getElementById("lista-pasajeros").innerHTML += "<h5>Pasajero "+(i+1)+": "+pasajerosTitanic[i]+"</h5>";
     }
