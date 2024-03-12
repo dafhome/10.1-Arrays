@@ -11,6 +11,8 @@ function registrarPasajero() {
         let nombre = document.getElementById("Pasajero").value;
         pasajerosTitanic.push(nombre);
         document.getElementById("alert").innerHTML = '<div class="alert alert-success" role="alert">Enhorabuena! Ha sido registrado con exito. Disfrute del Titanic.</div>'
+        document.getElementById("Pasajero").value = "";
+
     }
     else {
         document.getElementById("alert").innerHTML = '<div class="alert alert-danger" role="alert">Lo siento! El máximo de plazas es '+pasajerosTitanic.length+'. Ya no quedan plazas si nadie se da de baja.</div>'
@@ -26,6 +28,7 @@ function eliminarUltimo(){
 }
 
 function mostrarPasajeros(){
+    document.getElementById("Pasajero").value = "";
     document.getElementById("lista-pasajeros").innerHTML = "<h1>Listado Pasajeros: "+pasajerosTitanic.length+"</h1>";
     for (let i=0; i<pasajerosTitanic.length;i++){
     document.getElementById("lista-pasajeros").innerHTML += "<h5>Pasajero "+(i+1)+": "+pasajerosTitanic[i]+"</h5>";
